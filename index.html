@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WebSeva — Premium Reseller Hosting Infrastructure | White-Label &amp; WHMCS Ready</title>
+<meta name="description" content="WebSeva is the infrastructure behind your hosting business. Launch white-label reseller hosting with NVMe SSD storage, WHMCS automation, cPanel accounts, and 99.9% uptime.">
+<meta name="keywords" content="reseller hosting, white label reseller hosting, WHMCS reseller hosting, cPanel reseller hosting, hosting business, reseller hosting infrastructure">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0EA968">
+
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WebSeva">
+<meta property="og:title" content="WebSeva — Premium Reseller Hosting Infrastructure">
+<meta property="og:description" content="Launch and scale your own hosting business with white-label infrastructure, WHMCS automation, and NVMe-powered resources.">
+
+<link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+<link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png">
+<link rel="manifest" href="img/favicon/site.webmanifest">
+<link rel="canonical" href="/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "WebSeva",
+  "description": "WebSeva provides white-label reseller hosting infrastructure with NVMe storage, WHMCS automation, and cPanel accounts for hosting entrepreneurs.",
+  "url": "/",
+  "sameAs": []
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "What is reseller hosting?", "acceptedAnswer": {"@type": "Answer", "text": "Reseller hosting lets you purchase hosting resources in bulk from WebSeva and resell them under your own brand to your own clients, without owning or managing physical servers."}},
+    {"@type": "Question", "name": "Can I use my own brand?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. WebSeva is fully white-label — your customers only ever see your brand, your domain, your nameservers, and your support channels."}},
+    {"@type": "Question", "name": "Do you support WHMCS?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. WebSeva integrates natively with WHMCS for automated billing, provisioning, and customer account management."}},
+    {"@type": "Question", "name": "Can I create my own hosting packages?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely. You can define your own hosting packages, pricing tiers, and resource limits within your allocated reseller resources."}},
+    {"@type": "Question", "name": "Can I upgrade my plan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can upgrade your plan at any time as your hosting business grows, with resources scaled instantly and no downtime."}},
+    {"@type": "Question", "name": "Are backups included?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, automated daily backups are included on every reseller plan to help protect your customers' data."}},
+    {"@type": "Question", "name": "Do you provide technical support?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, our infrastructure team provides 24/7 technical support so you can focus on growing your hosting business."}},
+    {"@type": "Question", "name": "Can I use custom nameservers?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, you can configure fully branded custom nameservers, such as ns1.yourbrand.com, for a completely white-label experience."}}
+  ]
+}
+</script>
+</head>
+<body>
+
+<!-- ================= ICON SPRITE ================= -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+<symbol id="icon-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-menu" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="icon-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+<symbol id="icon-chevron-down" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3" y="13" width="18" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="7" cy="7.5" r="1" fill="currentColor"/><circle cx="7" cy="16.5" r="1" fill="currentColor"/></symbol>
+<symbol id="icon-cpu" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="9.5" y="9.5" width="5" height="5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="icon-ram" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="8" rx="1.4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M7 8V5M11 8V5M15 8V5M17 16v3M9 16v3M13 16v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="icon-nvme" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M8 8h8M8 12h8M8 16h4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+<symbol id="icon-bandwidth" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0 1 18 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 12 8 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="1.4" fill="currentColor"/></symbol>
+<symbol id="icon-accounts" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M16 6.2a3.2 3.2 0 0 1 0 6.2M19.5 20c0-2.9-1.9-5.3-4.5-6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+<symbol id="icon-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.8-7 9-4-1.2-7-4.5-7-9V6l7-3Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.8 2.4 4.2 5.5 4.2 9s-1.4 6.6-4.2 9c-2.8-2.4-4.2-5.5-4.2-9S9.2 5.4 12 3Z" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+<symbol id="icon-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.5 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-whitelabel" viewBox="0 0 24 24"><path d="M3 20 14.5 8.5a2 2 0 0 1 2.8 0l0 0a2 2 0 0 1 0 2.8L5.8 22.8 3 20Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M14 9 17 6M19 4l1.6-1.6M19 4a2 2 0 1 1-2 2 2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-whmcs" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3M18.4 5.6l-1.7 1.7M7.3 16.7l-1.7 1.7M18.4 18.4l-1.7-1.7M7.3 7.3 5.6 5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></symbol>
+<symbol id="icon-backup" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.7-5.7L20 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M20 4v4h-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 12a8 8 0 0 1-13.7 5.7L4 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M4 20v-4h4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-panel" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="1.8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 9h18M8 9v11" stroke="currentColor" stroke-width="1.8"/></symbol>
+<symbol id="icon-scale" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-star" viewBox="0 0 24 24"><path d="m12 2 2.9 6.3 6.9.8-5.1 4.8 1.4 6.9L12 17.6l-6.1 3.2 1.4-6.9L2.2 9l6.9-.8L12 2Z" fill="currentColor"/></symbol>
+<symbol id="icon-twitter" viewBox="0 0 24 24"><path d="M20 5.9c-.7.3-1.4.5-2.2.6a3.8 3.8 0 0 0 1.7-2.1c-.8.5-1.6.8-2.5 1a3.8 3.8 0 0 0-6.5 3.5A10.8 10.8 0 0 1 3 4.9a3.9 3.9 0 0 0 1.2 5.2c-.6 0-1.2-.2-1.7-.5v.1a3.9 3.9 0 0 0 3.1 3.8 3.9 3.9 0 0 1-1.7.1 3.9 3.9 0 0 0 3.6 2.7A7.7 7.7 0 0 1 2 17.7a10.9 10.9 0 0 0 5.9 1.7c7 0 10.9-5.9 10.9-11v-.5c.8-.5 1.4-1.2 1.9-2Z" fill="currentColor"/></symbol>
+<symbol id="icon-github" viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.3-3.4-1.3-.4-1.2-1-1.5-1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.7.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.5-1.3.1-2.6 0 0 .8-.3 2.7 1a9.4 9.4 0 0 1 5 0c1.9-1.3 2.7-1 2.7-1 .6 1.3.2 2.3.1 2.6.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .3.3.6.9.6 1.8v2.6c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor"/></symbol>
+<symbol id="icon-linkedin" viewBox="0 0 24 24"><path d="M4.5 3.5a2 2 0 1 0 0 4 2 2 0 0 0 0-4ZM3 9.5h3v11H3v-11ZM10 9.5h2.9v1.5h.04c.4-.8 1.5-1.7 3-1.7 3.2 0 3.8 2.1 3.8 4.9v6.3h-3v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H10v-11Z" fill="currentColor"/></symbol>
+<symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<symbol id="icon-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h6l-1 8 9-12h-6l1-8Z" fill="currentColor"/></symbol>
+<symbol id="icon-transfer" viewBox="0 0 24 24"><path d="M4 7h13M13 3l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M20 17H7M11 21l-4-4 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+</svg>
+
+<div class="site-top" id="siteTop">
+
+<!-- ================= PROMO BANNER ================= -->
+<div class="promo-banner" id="promoBanner">
+  <div class="container promo-banner-inner">
+    <p>Start your reseller hosting business today!</p>
+    <a href="#pricing" class="promo-banner-cta">Get Started <svg width="14" height="14"><use href="#icon-arrow-right"/></svg></a>
+  </div>
+  <button class="promo-banner-close" id="promoBannerClose" aria-label="Dismiss banner">
+    <svg width="14" height="14"><use href="#icon-close"/></svg>
+  </button>
+</div>
+
+<!-- ================= HEADER ================= -->
+<header class="site-header" id="siteHeader">
+  <div class="container header-inner">
+    <a href="#hero" class="logo" aria-label="WebSeva home">
+      <img src="img/logo.png" alt="WebSeva" class="logo-img">
+    </a>
+
+    <nav class="main-nav" id="mainNav" aria-label="Primary">
+      <ul>
+        <li><a class="nav-link" href="#hero">Home</a></li>
+        <li class="has-dropdown">
+          <button class="nav-link dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Plans <svg class="chev" width="14" height="14"><use href="#icon-chevron-down"/></svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="directadmin-reseller-hosting.html">
+              <svg width="18" height="18"><use href="#icon-panel"/></svg>
+              <span><strong>DirectAdmin Reseller Hosting</strong><small>Affordable &amp; easy to manage</small></span>
+            </a>
+            <a href="cpanel-reseller-hosting.html">
+              <svg width="18" height="18"><use href="#icon-server"/></svg>
+              <span><strong>cPanel Reseller Hosting</strong><small>The industry-standard panel</small></span>
+            </a>
+          </div>
+        </li>
+        <li><a class="nav-link" href="#blog">Blog</a></li>
+        <li><a class="nav-link" href="mailto:contact@webseva.com">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a href="https://my.bisup.com" class="btn btn-primary">Client Area</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileDrawer">
+        <svg width="22" height="22"><use href="#icon-menu"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile drawer -->
+  <div class="mobile-drawer" id="mobileDrawer">
+    <div class="mobile-drawer-head">
+      <img src="img/logo.png" alt="WebSeva" class="logo-img">
+      <button class="nav-toggle" id="navClose" aria-label="Close menu">
+        <svg width="22" height="22"><use href="#icon-close"/></svg>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="directadmin-reseller-hosting.html">DirectAdmin Reseller Hosting</a></li>
+      <li><a href="cpanel-reseller-hosting.html">cPanel Reseller Hosting</a></li>
+      <li><a href="#blog">Blog</a></li>
+      <li><a href="mailto:contact@webseva.com">Contact Us</a></li>
+    </ul>
+    <div class="mobile-drawer-actions">
+      <a href="https://my.bisup.com" class="btn btn-primary btn-block">Client Area</a>
+    </div>
+  </div>
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+</header>
+
+</div>
+
+<main id="about">
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow">Built for hosting entrepreneurs</p>
+      <h1>Professional Reseller Hosting for <span class="text-accent">Your Empire</span></h1>
+      <p class="hero-sub">Launch and scale your own hosting business with powerful white-label infrastructure, automated billing, and high-performance resources.</p>
+      <div class="hero-cta">
+        <a href="#pricing" class="btn btn-primary btn-lg">Start Free Trial</a>
+        <a href="#demo" class="btn btn-outline btn-lg">Book a Demo</a>
+      </div>
+      <ul class="trust-inline">
+        <li><svg width="16" height="16"><use href="#icon-check"/></svg>No credit card required</li>
+        <li><svg width="16" height="16"><use href="#icon-check"/></svg>Instant setup</li>
+        <li><svg width="16" height="16"><use href="#icon-check"/></svg>White-label ready</li>
+        <li><svg width="16" height="16"><use href="#icon-check"/></svg>99.9% uptime</li>
+      </ul>
+    </div>
+
+    <div class="hero-visual">
+      <img src="img/hero.jpg" alt="Illustration of a hosting entrepreneur managing their reseller business, backed by WebSeva infrastructure" class="hero-visual-img">
+    </div>
+  </div>
+</section>
+
+<!-- ================= LOGO MARQUEE ================= -->
+<section class="logo-marquee-section" aria-label="Technology we run on">
+  <div class="container">
+    <p class="logo-marquee-label">Powered by technology you already trust</p>
+  </div>
+  <div class="logo-marquee">
+    <div class="logo-marquee-track">
+      <div class="logo-marquee-group">
+        <img src="img/cpanel.png" alt="cPanel" class="logo-marquee-img">
+        <img src="img/directadmin.png" alt="DirectAdmin" class="logo-marquee-img">
+        <img src="img/wordpress.png" alt="WordPress" class="logo-marquee-img">
+        <img src="img/litespeed.png" alt="LiteSpeed" class="logo-marquee-img">
+        <img src="img/cloudflare.png" alt="Cloudflare" class="logo-marquee-img">
+        <img src="img/jetbackup.png" alt="JetBackup" class="logo-marquee-img">
+        <img src="img/aws.png" alt="AWS" class="logo-marquee-img">
+      </div>
+      <div class="logo-marquee-group" aria-hidden="true">
+        <img src="img/cpanel.png" alt="" class="logo-marquee-img">
+        <img src="img/directadmin.png" alt="" class="logo-marquee-img">
+        <img src="img/wordpress.png" alt="" class="logo-marquee-img">
+        <img src="img/litespeed.png" alt="" class="logo-marquee-img">
+        <img src="img/cloudflare.png" alt="" class="logo-marquee-img">
+        <img src="img/jetbackup.png" alt="" class="logo-marquee-img">
+        <img src="img/aws.png" alt="" class="logo-marquee-img">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TRUST STRIP ================= -->
+<section class="trust-strip" aria-label="Infrastructure highlights">
+  <div class="container trust-strip-inner">
+    <div class="trust-item">
+      <span class="trust-value">99.9%</span>
+      <span class="trust-label">Uptime</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-value">NVMe</span>
+      <span class="trust-label">SSD Storage</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-value">24/7</span>
+      <span class="trust-label">Infrastructure</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-value">Global</span>
+      <span class="trust-label">Network</span>
+    </div>
+    <div class="trust-item">
+      <span class="trust-value">White-label</span>
+      <span class="trust-label">Ready</span>
+    </div>
+  </div>
+</section>
+
+<div class="tip-strip">
+  <div class="container tip-strip-inner">
+    <span class="tip-strip-icon"><svg width="14" height="14"><use href="#icon-bolt"/></svg></span>
+    <p><strong>Quick tip:</strong> most hosting entrepreneurs start on the Business plan — it's built for 25+ client accounts.</p>
+  </div>
+</div>
+
+<!-- ================= PRICING ================= -->
+<section class="pricing" id="pricing">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Pricing</span>
+      <h2>Flexible Plans</h2>
+      <p>Start small, scale confidently, and build your hosting business on infrastructure designed for growth.</p>
+    </div>
+
+    <div class="product-switch">
+      <div class="product-switch-group" role="tablist" aria-label="Choose control panel">
+        <button type="button" class="product-switch-btn is-active" data-product="cpanel" role="tab" aria-selected="true">cPanel</button>
+        <button type="button" class="product-switch-btn" data-product="directadmin" role="tab" aria-selected="false">DirectAdmin</button>
+      </div>
+    </div>
+
+    <div class="billing-switch">
+      <span class="billing-label is-active" data-billing-label="monthly">Monthly</span>
+      <button class="switch" id="billingSwitch" role="switch" aria-checked="false" aria-label="Toggle yearly billing">
+        <span class="switch-knob"></span>
+      </button>
+      <span class="billing-label" data-billing-label="yearly">Yearly <em class="save-tag">Save 20%</em></span>
+    </div>
+
+    <div class="pricing-grid" id="pricingGrid">
+
+      <article class="price-card">
+        <h3 class="price-name">Reseller Starter</h3>
+        <p class="price-desc">Perfect for launching your first hosting brand.</p>
+        <div class="price-amount">
+          <span class="price-currency">$</span>
+          <span class="price-number" data-monthly="3.99">3.99</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <p class="price-billed-note" data-note>Billed monthly</p>
+        <a href="https://my.bisup.com/store/reseller-hosting/reseller-50" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Choose Plan</a>
+        <ul class="price-features">
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>10 cPanel Accounts</li>
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>100 GB NVMe SSD</li>
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>Unlimited Bandwidth</li>
+        </ul>
+        <div class="price-resources">
+          <div><span>RAM</span><strong>2 GB</strong></div>
+          <div><span>vCPU</span><strong>2 Cores</strong></div>
+          <div><span>I/O</span><strong>1 GB/s</strong></div>
+          <div><span>Inodes</span><strong>250,000</strong></div>
+        </div>
+      </article>
+
+      <article class="price-card price-card--featured">
+        <span class="price-badge">Best Deal</span>
+        <h3 class="price-name">Reseller Business</h3>
+        <p class="price-desc">Most hosting entrepreneurs start here.</p>
+        <div class="price-amount">
+          <span class="price-currency">$</span>
+          <span class="price-number" data-monthly="11.99">11.99</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <p class="price-billed-note" data-note>Billed monthly</p>
+        <a href="https://my.bisup.com/store/reseller-hosting/reseller-500" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-block">Choose Plan</a>
+        <ul class="price-features">
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>25 cPanel Accounts</li>
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>500 GB NVMe SSD</li>
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>Unlimited Bandwidth</li>
+        </ul>
+        <div class="price-resources">
+          <div><span>RAM</span><strong>4 GB</strong></div>
+          <div><span>vCPU</span><strong>2 Cores</strong></div>
+          <div><span>I/O</span><strong>2 GB/s</strong></div>
+          <div><span>Inodes</span><strong>250,000</strong></div>
+        </div>
+      </article>
+
+      <article class="price-card">
+        <h3 class="price-name">Reseller Enterprise</h3>
+        <p class="price-desc">For growing hosting businesses with more clients.</p>
+        <div class="price-amount">
+          <span class="price-currency">$</span>
+          <span class="price-number" data-monthly="23.99">23.99</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <p class="price-billed-note" data-note>Billed monthly</p>
+        <a href="https://my.bisup.com/store/reseller-hosting/reseller-unlimited" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Choose Plan</a>
+        <ul class="price-features">
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>50 cPanel Accounts</li>
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>500 GB NVMe SSD</li>
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>Unlimited Bandwidth</li>
+        </ul>
+        <div class="price-resources">
+          <div><span>RAM</span><strong>4 GB</strong></div>
+          <div><span>vCPU</span><strong>2 Cores</strong></div>
+          <div><span>I/O</span><strong>2 GB/s</strong></div>
+          <div><span>Inodes</span><strong>250,000</strong></div>
+        </div>
+      </article>
+
+      <article class="price-card">
+        <h3 class="price-name">Reseller TOP</h3>
+        <p class="price-desc">Maximum resources for serious scale.</p>
+        <div class="price-amount">
+          <span class="price-currency">$</span>
+          <span class="price-number" data-monthly="47.99">47.99</span>
+          <span class="price-period">/mo</span>
+        </div>
+        <p class="price-billed-note" data-note>Billed monthly</p>
+        <a href="https://my.bisup.com/store/reseller-hosting/top" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-block">Choose Plan</a>
+        <ul class="price-features">
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>100 cPanel Accounts</li>
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>1000 GB NVMe SSD</li>
+          <li><svg width="16" height="16"><use href="#icon-check"/></svg>Unlimited Bandwidth</li>
+        </ul>
+        <div class="price-resources">
+          <div><span>RAM</span><strong>4 GB</strong></div>
+          <div><span>vCPU</span><strong>4 Cores</strong></div>
+          <div><span>I/O</span><strong>4 GB/s</strong></div>
+          <div><span>Inodes</span><strong>250,000</strong></div>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="pricing-footnote" id="pricingSource">Live pricing sourced from webseva.com's cPanel reseller hosting plans.</p>
+
+    <details class="compare-details">
+      <summary>Compare all features <svg width="14" height="14"><use href="#icon-chevron-down"/></svg></summary>
+      <div class="compare-table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr>
+              <th>Feature</th>
+              <th>Starter</th>
+              <th>Business</th>
+              <th>Enterprise</th>
+              <th>TOP</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>cPanel Accounts</td><td>10</td><td>25</td><td>50</td><td>100</td></tr>
+            <tr><td>NVMe SSD Storage</td><td>100 GB</td><td>500 GB</td><td>500 GB</td><td>1000 GB</td></tr>
+            <tr><td>Bandwidth</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td><td>Unlimited</td></tr>
+            <tr><td>RAM</td><td>2 GB</td><td>4 GB</td><td>4 GB</td><td>4 GB</td></tr>
+            <tr><td>vCPU Cores</td><td>2</td><td>2</td><td>2</td><td>4</td></tr>
+            <tr><td>I/O Throughput</td><td>1 GB/s</td><td>2 GB/s</td><td>2 GB/s</td><td>4 GB/s</td></tr>
+            <tr><td>Inode Limit</td><td>250,000</td><td>250,000</td><td>250,000</td><td>250,000</td></tr>
+            <tr><td>White-label &amp; WHMCS</td><td colspan="4">Included on every plan</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </div>
+</section>
+
+<div class="tip-strip">
+  <div class="container tip-strip-inner">
+    <span class="tip-strip-icon"><svg width="14" height="14"><use href="#icon-bolt"/></svg></span>
+    <p><strong>Quick tip:</strong> every plan includes free WHMCS setup, so billing and provisioning are automated from day one.</p>
+  </div>
+</div>
+
+<!-- ================= INFRASTRUCTURE ================= -->
+<section class="infrastructure" id="infrastructure">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Infrastructure</span>
+      <h2>Features</h2>
+      <p>Everything you need to operate a fast, reliable, and scalable hosting business.</p>
+      <a href="#how-it-works" class="link-arrow">Explore Network Architecture <svg width="16" height="16"><use href="#icon-arrow-right"/></svg></a>
+    </div>
+
+    <div class="infra-tiles">
+      <article class="infra-tile" tabindex="0">
+        <div class="infra-tile-icon"><svg width="26" height="26"><use href="#icon-whmcs"/></svg></div>
+        <h3>WHMCS Integration</h3>
+        <p class="infra-tile-desc">Billing, provisioning, suspensions, and renewals — automated end to end, so orders go live without anyone touching a keyboard.</p>
+      </article>
+      <article class="infra-tile" tabindex="0">
+        <div class="infra-tile-icon"><svg width="26" height="26"><use href="#icon-whitelabel"/></svg></div>
+        <h3>White-Label Branding</h3>
+        <p class="infra-tile-desc">Custom nameservers, a customer-facing panel, and zero WebSeva branding anywhere your clients look.</p>
+      </article>
+      <article class="infra-tile" tabindex="0">
+        <div class="infra-tile-icon"><svg width="26" height="26"><use href="#icon-nvme"/></svg></div>
+        <h3>NVMe SSD Storage</h3>
+        <p class="infra-tile-desc">Every account runs on enterprise NVMe drives, not spinning disks — so customer sites stay fast under real traffic.</p>
+      </article>
+      <article class="infra-tile" tabindex="0">
+        <div class="infra-tile-icon"><svg width="26" height="26"><use href="#icon-backup"/></svg></div>
+        <h3>Daily Backups</h3>
+        <p class="infra-tile-desc">Automated daily snapshots run quietly in the background, so you're always close to a clean restore point.</p>
+      </article>
+      <article class="infra-tile" tabindex="0">
+        <div class="infra-tile-icon"><svg width="26" height="26"><use href="#icon-globe"/></svg></div>
+        <h3>Global Network</h3>
+        <p class="infra-tile-desc">Points of presence chosen for low latency, so customer sites load fast wherever their visitors are.</p>
+      </article>
+      <article class="infra-tile" tabindex="0">
+        <div class="infra-tile-icon"><svg width="26" height="26"><use href="#icon-clock"/></svg></div>
+        <h3>24/7 Monitoring</h3>
+        <p class="infra-tile-desc">Every server is watched around the clock, with issues caught and fixed before your customers notice.</p>
+      </article>
+      <article class="infra-tile" tabindex="0">
+        <div class="infra-tile-icon"><svg width="26" height="26"><use href="#icon-bolt"/></svg></div>
+        <h3>Instant Provisioning</h3>
+        <p class="infra-tile-desc">New orders go from checkout to a live cPanel account in seconds, with zero manual setup.</p>
+      </article>
+      <article class="infra-tile" tabindex="0">
+        <div class="infra-tile-icon"><svg width="26" height="26"><use href="#icon-transfer"/></svg></div>
+        <h3>Free Migrations</h3>
+        <p class="infra-tile-desc">Bring your existing clients over from another host — our team moves every account for you, at no cost.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<div class="tip-strip">
+  <div class="container tip-strip-inner">
+    <span class="tip-strip-icon"><svg width="14" height="14"><use href="#icon-bolt"/></svg></span>
+    <p><strong>Quick tip:</strong> switching from another host? We migrate every account, domain, and package for free.</p>
+  </div>
+</div>
+
+<!-- ================= WHY RESELLERS STAY ================= -->
+<section class="stay" id="why-resellers-stay">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Customer success</span>
+      <h2>Why Resellers Stay</h2>
+      <p>A hosting partner that doesn't disappear after checkout.</p>
+    </div>
+
+    <div class="stack-wrap">
+
+      <article class="stack-card" style="--i:0">
+        <div class="stack-copy">
+          <span class="eyebrow">Real support</span>
+          <h3>Humans who actually manage your servers</h3>
+          <p>No offshore scripts, no ticket black holes. When you write in, you're talking to the engineers who run the infrastructure your business depends on.</p>
+          <ul class="stack-list">
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>24/7 access to real infrastructure engineers</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>Average first response under 15 minutes</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>One team, from signup to renewal</li>
+          </ul>
+        </div>
+        <div class="stack-visual">
+          <img src="img/card4.png" alt="Illustration of a 24/7 support team helping a reseller's customer" class="stack-visual-img">
+        </div>
+      </article>
+
+      <article class="stack-card" style="--i:1">
+        <div class="stack-copy">
+          <span class="eyebrow">Honest pricing</span>
+          <h3>The price you start at is the price you renew at</h3>
+          <p>No quiet renewal hikes buried in fine print. Your reseller pricing stays exactly as agreed, term after term, so your margins stay yours.</p>
+          <ul class="stack-list">
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>No hidden renewal price increases</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>Transparent invoices, every time</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>Lock in yearly pricing in one click</li>
+          </ul>
+        </div>
+        <div class="stack-visual">
+          <img src="img/card1.png" alt="Illustration of cash, a coin, a billing calendar, and a payment card representing predictable pricing" class="stack-visual-img">
+        </div>
+      </article>
+
+      <article class="stack-card" style="--i:2">
+        <div class="stack-copy">
+          <span class="eyebrow">White-glove migrations</span>
+          <h3>We move your clients for you</h3>
+          <p>Switching from another reseller platform shouldn't cost you customers. Our team migrates every account, package, and domain — free, with zero downtime.</p>
+          <ul class="stack-list">
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>Free migration for unlimited accounts</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>Zero downtime cutover</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>DNS and domains handled for you</li>
+          </ul>
+        </div>
+        <div class="stack-visual">
+          <img src="img/card3.png" alt="Illustration of a person uploading accounts and files to the cloud during a migration" class="stack-visual-img">
+        </div>
+      </article>
+
+      <article class="stack-card" style="--i:3">
+        <div class="stack-copy">
+          <span class="eyebrow">Room to grow</span>
+          <h3>Scale from 10 accounts to 1,000 without re-platforming</h3>
+          <p>Upgrade resources instantly as your business grows. No forced migrations, no re-selling your customers on a new panel.</p>
+          <ul class="stack-list">
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>Instant resource upgrades, no downtime</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>Same panel from your first sale to your thousandth</li>
+            <li><svg width="16" height="16"><use href="#icon-check"/></svg>A dedicated account manager as you scale</li>
+          </ul>
+        </div>
+        <div class="stack-visual">
+          <img src="img/card2.png" alt="Illustration of server racks, cloud sync, and an analytics dashboard representing scalable infrastructure" class="stack-visual-img">
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<div class="tip-strip">
+  <div class="container tip-strip-inner">
+    <span class="tip-strip-icon"><svg width="14" height="14"><use href="#icon-bolt"/></svg></span>
+    <p><strong>Quick tip:</strong> white-label means exactly that — your customers never see the WebSeva name, only yours.</p>
+  </div>
+</div>
+
+<!-- ================= FEATURE GRID ================= -->
+<section class="features">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Platform</span>
+      <h2>Everything You Need to Build Your Hosting Business</h2>
+    </div>
+    <div class="feature-grid">
+      <div class="feature-item">
+        <div class="feature-icon"><svg width="20" height="20"><use href="#icon-whitelabel"/></svg></div>
+        <h3>White-Label Hosting</h3>
+        <p>Sell hosting entirely under your own brand, with no WebSeva branding visible to your customers.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><svg width="20" height="20"><use href="#icon-whmcs"/></svg></div>
+        <h3>WHMCS Automation</h3>
+        <p>Automate billing, provisioning, and support so your hosting business runs itself.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><svg width="20" height="20"><use href="#icon-nvme"/></svg></div>
+        <h3>NVMe Storage</h3>
+        <p>Enterprise-grade NVMe drives deliver fast page loads across every account you host.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><svg width="20" height="20"><use href="#icon-backup"/></svg></div>
+        <h3>Automated Backups</h3>
+        <p>Daily automated backups protect your customers' data without any manual intervention.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><svg width="20" height="20"><use href="#icon-panel"/></svg></div>
+        <h3>Powerful Control Panel</h3>
+        <p>Manage accounts, packages, and resources from a clean, intuitive reseller dashboard.</p>
+      </div>
+      <div class="feature-item">
+        <div class="feature-icon"><svg width="20" height="20"><use href="#icon-scale"/></svg></div>
+        <h3>Scalable Infrastructure</h3>
+        <p>Upgrade resources instantly as your customer base grows, with zero downtime.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tip-strip">
+  <div class="container tip-strip-inner">
+    <span class="tip-strip-icon"><svg width="14" height="14"><use href="#icon-bolt"/></svg></span>
+    <p><strong>Quick tip:</strong> most resellers are live and selling within 24 hours of signing up.</p>
+  </div>
+</div>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="how-it-works" id="how-it-works">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Getting started</span>
+      <h2>Launch Your Hosting Business in 3 Steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">01</div>
+        <h3>Choose Your Plan</h3>
+        <p>Select the infrastructure that matches your business.</p>
+      </div>
+      <div class="step-connector" aria-hidden="true"></div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <h3>Build Your Brand</h3>
+        <p>Configure your branding, nameservers, packages, and billing system.</p>
+      </div>
+      <div class="step-connector" aria-hidden="true"></div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <h3>Start Selling</h3>
+        <p>Launch your hosting business and start onboarding customers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tip-strip">
+  <div class="container tip-strip-inner">
+    <span class="tip-strip-icon"><svg width="14" height="14"><use href="#icon-bolt"/></svg></span>
+    <p><strong>Quick tip:</strong> upgrade your plan anytime — no downtime, no re-selling your customers on a new panel.</p>
+  </div>
+</div>
+
+<!-- ================= CTA ================= -->
+<section class="cta-section">
+  <div class="container">
+    <div class="cta-box">
+      <div class="cta-pattern" aria-hidden="true"></div>
+      <div class="cta-content">
+        <span class="eyebrow">Get started</span>
+        <h2>Ready to Build Your Hosting Empire?</h2>
+        <p>Start with powerful infrastructure and grow your hosting business without managing the underlying servers yourself.</p>
+        <div class="cta-actions">
+          <a href="#pricing" class="btn btn-white btn-lg">Get Started Free</a>
+          <a href="#docs" class="btn btn-outline-white btn-lg">View Documentation</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="tip-strip">
+  <div class="container tip-strip-inner">
+    <span class="tip-strip-icon"><svg width="14" height="14"><use href="#icon-bolt"/></svg></span>
+    <p><strong>Quick tip:</strong> still deciding? The FAQ below covers what resellers ask us most.</p>
+  </div>
+</div>
+
+<!-- ================= FAQ ================= -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Support</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          What is reseller hosting?
+          <svg width="16" height="16"><use href="#icon-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer"><p>Reseller hosting lets you purchase hosting resources in bulk from WebSeva and resell them under your own brand to your own clients, without owning or managing physical servers.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I use my own brand?
+          <svg width="16" height="16"><use href="#icon-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer"><p>Yes. WebSeva is fully white-label — your customers only ever see your brand, your domain, your nameservers, and your support channels.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you support WHMCS?
+          <svg width="16" height="16"><use href="#icon-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer"><p>Yes. WebSeva integrates natively with WHMCS for automated billing, provisioning, and customer account management.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I create my own hosting packages?
+          <svg width="16" height="16"><use href="#icon-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer"><p>Absolutely. You can define your own hosting packages, pricing tiers, and resource limits within your allocated reseller resources.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I upgrade my plan?
+          <svg width="16" height="16"><use href="#icon-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer"><p>Yes, you can upgrade your plan at any time as your hosting business grows, with resources scaled instantly and no downtime.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Are backups included?
+          <svg width="16" height="16"><use href="#icon-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer"><p>Yes, automated daily backups are included on every reseller plan to help protect your customers' data.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Do you provide technical support?
+          <svg width="16" height="16"><use href="#icon-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer"><p>Yes, our infrastructure team provides 24/7 technical support so you can focus on growing your hosting business.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" aria-expanded="false">
+          Can I use custom nameservers?
+          <svg width="16" height="16"><use href="#icon-chevron-down"/></svg>
+        </button>
+        <div class="faq-answer"><p>Yes, you can configure fully branded custom nameservers, such as ns1.yourbrand.com, for a completely white-label experience.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <a href="#hero" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="1.8" fill="#fff"/><rect x="3" y="13" width="18" height="7" rx="1.8" fill="#fff" fill-opacity=".7"/></svg>
+        </span>
+        <span class="logo-text">web<span class="logo-accent">seva</span></span>
+      </a>
+      <p>Fast, reliable reseller hosting with premium infrastructure, NVMe storage, and 24/7 expert support to help you grow your hosting business.</p>
+    </div>
+
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="cpanel-reseller-hosting.html">cPanel Reseller Hosting</a></li>
+        <li><a href="directadmin-reseller-hosting.html">DirectAdmin Reseller Hosting</a></li>
+        <li><a href="mailto:contact@webseva.com">Contact Us</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="https://my.bisup.com">Client Area</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <span>© 2026 Webseva. All rights reserved.</span>
+      <span class="footer-tag">Backed by <a href="https://bisup.com" target="_blank" rel="noopener">Bisup</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
