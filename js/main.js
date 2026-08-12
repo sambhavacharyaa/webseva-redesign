@@ -203,6 +203,16 @@
       });
     }
 
+    // Clicking the "Monthly"/"Yearly" text labels also toggles billing —
+    // widens the effective tap target beyond just the small switch track.
+    billingLabels.forEach(function (el) {
+      el.style.cursor = 'pointer';
+      el.addEventListener('click', function () {
+        isYearly = el.getAttribute('data-billing-label') === 'yearly';
+        renderPricing();
+      });
+    });
+
     renderPricing();
   }
 

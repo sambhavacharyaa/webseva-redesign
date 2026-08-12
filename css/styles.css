@@ -48,7 +48,12 @@
 /* ---------------- Reset ---------------- */
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
-html { scroll-behavior: smooth; }
+/* overflow-x is intentionally set on html only, not body — setting it on
+   body as well turns body into a second scroll container, which breaks
+   position: sticky for every sticky element on the page (the header,
+   the stacked cards, etc. stop sticking because their nearest scrolling
+   ancestor is no longer the viewport). */
+html { scroll-behavior: smooth; overflow-x: hidden; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   color: var(--color-text);
@@ -305,7 +310,7 @@ section { padding-block: 96px; }
 }
 
 .logo { display: inline-flex; align-items: center; gap: 9px; }
-.logo-img { height: 28px; width: auto; display: block; }
+.logo-img { height: 60px; width: auto; display: block; }
 .logo-mark {
   display: inline-flex;
   align-items: center;
@@ -371,7 +376,7 @@ section { padding-block: 96px; }
   display: none;
   align-items: center;
   justify-content: center;
-  width: 38px; height: 38px;
+  width: 44px; height: 44px;
   border-radius: 9px;
   color: var(--color-heading);
 }
@@ -425,9 +430,12 @@ section { padding-block: 96px; }
     radial-gradient(700px 420px at 82% -8%, var(--color-primary-lighter), transparent 60%),
     #fff;
 }
+/* Hero gets a wider content area than the rest of the site so long
+   headlines have more room to breathe before wrapping onto extra lines. */
+.hero .container { max-width: 1280px; }
 .hero-grid {
   display: grid;
-  grid-template-columns: 1.02fr 0.98fr;
+  grid-template-columns: 1.15fr 0.85fr;
   gap: 56px;
   align-items: center;
 }
@@ -457,7 +465,7 @@ section { padding-block: 96px; }
 .hero-sub {
   font-size: 17.5px;
   color: var(--color-muted);
-  max-width: 520px;
+  max-width: 580px;
   margin-bottom: 32px;
 }
 .hero-cta { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 30px; }
@@ -536,6 +544,11 @@ section { padding-block: 96px; }
   .hero-visual { max-width: 400px; margin-inline: auto; order: 2; margin-top: 12px; }
   .hero-copy { order: 1; text-align: left; }
 }
+@media (max-width: 640px) {
+  /* Hero illustration is hidden on phones — keeps the hero short and
+     focused on the headline/CTA instead of pushing content below the fold. */
+  .hero-visual { display: none; }
+}
 
 /* =========================================================
    TRUST STRIP
@@ -580,10 +593,11 @@ section { padding-block: 96px; }
   gap: 4px;
 }
 .product-switch-btn {
-  padding: 9px 22px;
+  padding: 13px 22px;
   border-radius: var(--radius-full);
   font-size: 14px;
   font-weight: 600;
+  line-height: 1.3;
   color: var(--color-muted);
   transition: background 0.2s var(--ease), color 0.2s var(--ease), box-shadow 0.2s var(--ease);
 }
@@ -734,10 +748,29 @@ section { padding-block: 96px; }
 .compare-table-wrap {
   margin-top: 24px;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   background: #fff;
   border: 1px solid var(--color-lavender-border);
   border-radius: var(--radius-md);
   text-align: left;
+}
+.compare-scroll-hint { display: none; }
+@media (max-width: 640px) {
+  .compare-table-wrap {
+    -webkit-mask-image: linear-gradient(90deg, #000 85%, transparent);
+    mask-image: linear-gradient(90deg, #000 85%, transparent);
+  }
+  .compare-scroll-hint {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--color-muted);
+    margin-top: 14px;
+  }
+  .compare-scroll-hint svg { color: var(--color-primary); flex-shrink: 0; }
 }
 .compare-table { width: 100%; border-collapse: collapse; min-width: 560px; }
 .compare-table th, .compare-table td {
