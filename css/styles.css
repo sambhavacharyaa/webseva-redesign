@@ -1133,8 +1133,10 @@ section { padding-block: 96px; }
   gap: 32px;
   padding-bottom: 48px;
 }
-.footer-brand .logo-text { color: #fff; }
 .footer-brand p { font-size: 14px; margin-top: 14px; max-width: 320px; color: rgba(255,255,255,0.55); }
+/* The real wordmark's "web" half is near-black, which disappears on this dark background, so it's
+   flipped fully white here via filter rather than recolored text/SVG standing in for the actual logo. */
+.footer-logo-img { height: 26px; width: auto; display: block; filter: brightness(0) invert(1); }
 
 .footer-col h4 { color: #fff; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 16px; }
 .footer-col ul { display: flex; flex-direction: column; gap: 11px; }
@@ -1145,6 +1147,8 @@ section { padding-block: 96px; }
 .footer-bottom-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,0.5); }
 .footer-bottom-inner a { color: rgba(255,255,255,0.75); font-weight: 600; transition: color 0.2s var(--ease); }
 .footer-bottom-inner a:hover { color: #fff; }
+.footer-tag { display: inline-flex; align-items: center; gap: 6px; }
+.footer-tag .bisup-logo-img { height: 20px; width: auto; display: block; }
 
 @media (max-width: 600px) {
   .footer-top { grid-template-columns: 1fr; row-gap: 32px; }

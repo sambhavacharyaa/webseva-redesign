@@ -140,29 +140,33 @@
     </div>
   </div>
 
-  <!-- Mobile drawer -->
-  <div class="mobile-drawer" id="mobileDrawer">
-    <div class="mobile-drawer-head">
-      <img src="img/logo.png" alt="WebSeva" class="logo-img">
-      <button class="nav-toggle" id="navClose" aria-label="Close menu">
-        <svg width="22" height="22"><use href="#icon-close"/></svg>
-      </button>
-    </div>
-    <ul class="mobile-nav-list">
-      <li><a href="#hero">Home</a></li>
-      <li><a href="directadmin-reseller-hosting.html">DirectAdmin Reseller Hosting</a></li>
-      <li><a href="cpanel-reseller-hosting.html">cPanel Reseller Hosting</a></li>
-      <li><a href="#blog">Blog</a></li>
-      <li><a href="mailto:contact@webseva.com">Contact Us</a></li>
-    </ul>
-    <div class="mobile-drawer-actions">
-      <a href="https://my.bisup.com" class="btn btn-primary btn-block">Client Area</a>
-    </div>
-  </div>
-  <div class="drawer-backdrop" id="drawerBackdrop"></div>
 </header>
 
 </div>
+
+<!-- Mobile drawer: kept as a direct child of body (not inside .site-header) because .site-header has
+     backdrop-filter, which creates a new containing block for position:fixed descendants. Nesting the
+     drawer inside it made the drawer fix itself relative to the header instead of the viewport, so it
+     didn't stay pinned full-screen while the page scrolled. -->
+<div class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-drawer-head">
+    <img src="img/logo.png" alt="WebSeva" class="logo-img">
+    <button class="nav-toggle" id="navClose" aria-label="Close menu">
+      <svg width="22" height="22"><use href="#icon-close"/></svg>
+    </button>
+  </div>
+  <ul class="mobile-nav-list">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="directadmin-reseller-hosting.html">DirectAdmin Reseller Hosting</a></li>
+    <li><a href="cpanel-reseller-hosting.html">cPanel Reseller Hosting</a></li>
+    <li><a href="#blog">Blog</a></li>
+    <li><a href="mailto:contact@webseva.com">Contact Us</a></li>
+  </ul>
+  <div class="mobile-drawer-actions">
+    <a href="https://my.bisup.com" class="btn btn-primary btn-block">Client Area</a>
+  </div>
+</div>
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
 
 <main id="about">
 
@@ -745,11 +749,8 @@
 <footer class="site-footer">
   <div class="container footer-top">
     <div class="footer-brand">
-      <a href="#hero" class="logo">
-        <span class="logo-mark" aria-hidden="true">
-          <svg width="20" height="20" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="7" rx="1.8" fill="#fff"/><rect x="3" y="13" width="18" height="7" rx="1.8" fill="#fff" fill-opacity=".7"/></svg>
-        </span>
-        <span class="logo-text">web<span class="logo-accent">seva</span></span>
+      <a href="#hero" class="logo" aria-label="WebSeva home">
+        <img src="img/logo.png" alt="WebSeva" class="footer-logo-img">
       </a>
       <p>Fast, reliable reseller hosting with premium infrastructure, NVMe storage, and 24/7 expert support to help you grow your hosting business.</p>
     </div>
@@ -770,7 +771,7 @@
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
       <span>© 2026 Webseva. All rights reserved.</span>
-      <span class="footer-tag">Backed by <a href="https://bisup.com" target="_blank" rel="noopener">Bisup</a></span>
+      <span class="footer-tag">Backed by <a href="https://bisup.com" target="_blank" rel="noopener" aria-label="Bisup"><img src="img/bisup.avif" alt="Bisup" class="bisup-logo-img"></a></span>
     </div>
   </div>
 </footer>

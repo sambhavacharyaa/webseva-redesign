@@ -43,17 +43,31 @@
   var drawer = doc.getElementById('mobileDrawer');
   var backdrop = doc.getElementById('drawerBackdrop');
 
+  // `overflow: hidden` on body alone doesn't reliably block background touch-scroll on iOS Safari,
+  // which let the page scroll behind the open drawer. Locking the body to `position: fixed` at its
+  // current scroll offset (and restoring it on close) blocks scroll everywhere, consistently.
+  var lockedScrollY = 0;
   function openDrawer() {
     drawer.classList.add('is-open');
     backdrop.classList.add('is-open');
     navToggle.setAttribute('aria-expanded', 'true');
+    lockedScrollY = window.scrollY || window.pageYOffset || 0;
+    doc.body.style.position = 'fixed';
+    doc.body.style.top = -lockedScrollY + 'px';
+    doc.body.style.left = '0';
+    doc.body.style.right = '0';
     doc.body.style.overflow = 'hidden';
   }
   function closeDrawer() {
     drawer.classList.remove('is-open');
     backdrop.classList.remove('is-open');
     navToggle.setAttribute('aria-expanded', 'false');
+    doc.body.style.position = '';
+    doc.body.style.top = '';
+    doc.body.style.left = '';
+    doc.body.style.right = '';
     doc.body.style.overflow = '';
+    window.scrollTo(0, lockedScrollY);
   }
   if (navToggle) navToggle.addEventListener('click', openDrawer);
   if (navClose) navClose.addEventListener('click', closeDrawer);
