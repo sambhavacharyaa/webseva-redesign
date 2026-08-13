@@ -1134,9 +1134,7 @@ section { padding-block: 96px; }
   padding-bottom: 48px;
 }
 .footer-brand p { font-size: 14px; margin-top: 14px; max-width: 320px; color: rgba(255,255,255,0.55); }
-/* The real wordmark's "web" half is near-black, which disappears on this dark background, so it's
-   flipped fully white here via filter rather than recolored text/SVG standing in for the actual logo. */
-.footer-logo-img { height: 26px; width: auto; display: block; filter: brightness(0) invert(1); }
+.footer-logo-img { height: 26px; width: auto; display: block; }
 
 .footer-col h4 { color: #fff; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 16px; }
 .footer-col ul { display: flex; flex-direction: column; gap: 11px; }
