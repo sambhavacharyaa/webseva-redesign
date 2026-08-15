@@ -276,4 +276,48 @@
   window.addEventListener('resize', function () {
     if (window.innerWidth > 900) closeDrawer();
   });
+
+  /* ---------------- Legal page section switcher ---------------- */
+  // Powers legal.html: one page with a shared sidebar/shell, but each policy gets its own
+  // URL (via pushState, no reload) so it still looks and feels like one continuous page.
+  var legalLinks = doc.querySelectorAll('.legal-nav-link');
+  var legalSections = doc.querySelectorAll('.legal-section');
+  if (legalLinks.length && legalSections.length) {
+    var showLegalSection = function (id) {
+      var matchedId = id;
+      var found = false;
+      legalSections.forEach(function (section) {
+        var isMatch = section.id === id;
+        section.classList.toggle('is-active', isMatch);
+        if (isMatch) found = true;
+      });
+      if (!found) {
+        matchedId = legalSections[0].id;
+        legalSections[0].classList.add('is-active');
+      }
+      legalLinks.forEach(function (link) {
+        link.classList.toggle('is-active', link.getAttribute('href') === '#' + matchedId);
+      });
+      return matchedId;
+    };
+
+    legalLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var id = link.getAttribute('href').slice(1);
+        showLegalSection(id);
+        history.pushState(null, '', '#' + id);
+        var layout = doc.querySelector('.legal-layout');
+        if (layout) {
+          window.scrollTo({ top: layout.offsetTop - 90, behavior: 'smooth' });
+        }
+      });
+    });
+
+    window.addEventListener('popstate', function () {
+      showLegalSection(location.hash.slice(1) || legalSections[0].id);
+    });
+
+    showLegalSection(location.hash.slice(1) || legalSections[0].id);
+  }
 })();

@@ -1126,28 +1126,128 @@ section { padding-block: 96px; }
 /* =========================================================
    FOOTER
    ========================================================= */
-.site-footer { background: var(--color-ink); color: rgba(255,255,255,0.7); padding-top: 72px; }
+.site-footer { background: var(--color-ink); color: rgba(255,255,255,0.9); padding-top: 72px; }
 .footer-top {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
+  grid-template-columns: 1.3fr 0.85fr 0.85fr;
   gap: 32px;
   padding-bottom: 48px;
 }
-.footer-brand p { font-size: 14px; margin-top: 14px; max-width: 320px; color: rgba(255,255,255,0.55); }
+.footer-brand p { font-size: 14px; margin-top: 14px; max-width: 320px; color: rgba(255,255,255,0.85); }
 .footer-logo-img { height: 60px; width: auto; display: block; }
 
 .footer-col h4 { color: #fff; font-size: 13.5px; text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 16px; }
 .footer-col ul { display: flex; flex-direction: column; gap: 11px; }
-.footer-col a { font-size: 14px; color: rgba(255,255,255,0.6); transition: color 0.2s var(--ease); }
+.footer-col a { font-size: 14px; color: rgba(255,255,255,0.85); transition: color 0.2s var(--ease); }
 .footer-col a:hover { color: #fff; }
 
 .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-block: 22px; }
-.footer-bottom-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,0.5); }
-.footer-bottom-inner a { color: rgba(255,255,255,0.75); font-weight: 600; transition: color 0.2s var(--ease); }
+.footer-bottom-inner { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; font-size: 13px; color: rgba(255,255,255,0.8); }
+.footer-bottom-inner a { color: rgba(255,255,255,0.9); font-weight: 600; transition: color 0.2s var(--ease); }
 .footer-bottom-inner a:hover { color: #fff; }
 .footer-tag { display: inline-flex; align-items: center; gap: 6px; }
 .footer-tag .bisup-logo-img { height: 20px; width: auto; display: block; }
 
+@media (max-width: 860px) {
+  .footer-top { grid-template-columns: 1fr 1fr; row-gap: 32px; }
+  .footer-brand { grid-column: 1 / -1; }
+}
 @media (max-width: 600px) {
   .footer-top { grid-template-columns: 1fr; row-gap: 32px; }
+}
+
+/* =========================================================
+   PAGE HERO — shared lightweight header band for informational
+   pages (About Us, Legal) that don't need the full marketing hero.
+   ========================================================= */
+.page-hero {
+  padding-top: 72px;
+  padding-bottom: 56px;
+  text-align: center;
+  background:
+    radial-gradient(700px 420px at 82% -8%, var(--color-primary-lighter), transparent 60%),
+    #fff;
+}
+.page-hero .container { max-width: 760px; }
+.page-hero h1 { font-size: clamp(32px, 4.5vw, 48px); margin-bottom: 16px; }
+.page-hero p { font-size: 17px; color: var(--color-muted); }
+
+/* =========================================================
+   ABOUT US
+   ========================================================= */
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.mission-vision-card {
+  padding: 36px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: linear-gradient(160deg, var(--color-primary-lighter) 0%, #FBFAFE 60%, var(--color-lavender) 100%);
+}
+.mission-vision-card .feature-icon { margin-bottom: 18px; }
+.mission-vision-card h3 { font-size: 21px; margin-bottom: 10px; }
+.mission-vision-card p { font-size: 15px; color: var(--color-text); }
+@media (max-width: 700px) {
+  .mission-vision-grid { grid-template-columns: 1fr; }
+}
+
+/* =========================================================
+   LEGAL PAGE — sidebar-navigated policy sections
+   ========================================================= */
+.legal-layout .container {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.legal-sidebar { position: sticky; top: 96px; display: flex; flex-direction: column; gap: 3px; }
+.legal-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px 14px;
+  border-radius: 10px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-text);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease);
+}
+.legal-nav-link svg { flex-shrink: 0; color: var(--color-muted); transition: color 0.2s var(--ease); }
+.legal-nav-link:hover { background: var(--color-surface); color: var(--color-heading); }
+.legal-nav-link.is-active { background: var(--color-primary-light); color: var(--color-primary-dark); }
+.legal-nav-link.is-active svg { color: var(--color-primary-dark); }
+
+.legal-content { min-width: 0; }
+.legal-section { display: none; }
+.legal-section.is-active { display: block; animation: legal-fade-in 0.35s var(--ease); }
+@keyframes legal-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .legal-section.is-active { animation: none; }
+}
+.legal-section h2 { font-size: clamp(24px, 3vw, 32px); margin-bottom: 6px; }
+.legal-updated { font-size: 13px; color: var(--color-muted); margin-bottom: 30px; }
+.legal-section h3 { font-size: 17px; margin-top: 30px; margin-bottom: 10px; }
+.legal-section p { font-size: 15px; color: var(--color-text); margin-bottom: 14px; line-height: 1.7; }
+.legal-section ul { list-style: disc; padding-left: 22px; margin-bottom: 14px; }
+.legal-section ul li { font-size: 15px; color: var(--color-text); margin-bottom: 7px; line-height: 1.6; }
+.legal-section a.link-arrow { display: inline-flex; }
+
+@media (max-width: 860px) {
+  .legal-layout .container { grid-template-columns: 1fr; }
+  .legal-sidebar {
+    position: static;
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 8px;
+    padding-bottom: 14px;
+    margin-bottom: 32px;
+    border-bottom: 1px solid var(--color-border);
+    -webkit-overflow-scrolling: touch;
+  }
+  .legal-nav-link { white-space: nowrap; }
 }
