@@ -102,41 +102,47 @@
   /* ---------------- Pricing: product switch + billing switch ---------------- */
   // Real plan data fetched from webseva.com's live cPanel and DirectAdmin
   // reseller hosting pages.
+  // `yearly` is the per-month rate when billed for a 12-month term (this is the number
+  // shown on Bisup's own pricing pages, e.g. "$3.99/mo billed for 12 months"). Paying
+  // month-to-month costs MONTHLY_MARKUP more — see renderPricing() below. An earlier
+  // version of this data had the relationship backwards (treated the 12-month rate as
+  // the monthly rate, then discounted *down* for yearly instead of marking *up* for
+  // monthly) — fixed per the real billing terms on Bisup's pricing pages.
   var PRICING_DATA = {
     cpanel: [
-      { name: 'Reseller Starter', desc: 'Perfect for launching your first hosting brand.', monthly: 3.99,
+      { name: 'Reseller Starter', desc: 'Perfect for launching your first hosting brand.', yearly: 3.99,
         url: 'https://my.bisup.com/store/reseller-hosting/reseller-50',
         features: ['10 cPanel Accounts', '100 GB NVMe SSD', 'Unlimited Bandwidth'],
         resources: [['RAM', '2 GB'], ['vCPU', '2 Cores'], ['I/O', '1 GB/s'], ['Inodes', '250,000']] },
-      { name: 'Reseller Business', desc: 'Most hosting entrepreneurs start here.', monthly: 11.99,
+      { name: 'Reseller Business', desc: 'Most hosting entrepreneurs start here.', yearly: 11.99,
         url: 'https://my.bisup.com/store/reseller-hosting/reseller-500',
         features: ['25 cPanel Accounts', '500 GB NVMe SSD', 'Unlimited Bandwidth'],
         resources: [['RAM', '4 GB'], ['vCPU', '2 Cores'], ['I/O', '2 GB/s'], ['Inodes', '250,000']] },
-      { name: 'Reseller Enterprise', desc: 'For growing hosting businesses with more clients.', monthly: 23.99,
+      { name: 'Reseller Enterprise', desc: 'For growing hosting businesses with more clients.', yearly: 23.99,
         url: 'https://my.bisup.com/store/reseller-hosting/reseller-unlimited',
         features: ['50 cPanel Accounts', '500 GB NVMe SSD', 'Unlimited Bandwidth'],
         resources: [['RAM', '4 GB'], ['vCPU', '2 Cores'], ['I/O', '2 GB/s'], ['Inodes', '250,000']] },
-      { name: 'Reseller TOP', desc: 'Maximum resources for serious scale.', monthly: 47.99,
+      { name: 'Reseller TOP', desc: 'Maximum resources for serious scale.', yearly: 47.99,
         url: 'https://my.bisup.com/store/reseller-hosting/top',
         features: ['100 cPanel Accounts', '1000 GB NVMe SSD', 'Unlimited Bandwidth'],
         resources: [['RAM', '4 GB'], ['vCPU', '4 Cores'], ['I/O', '4 GB/s'], ['Inodes', '250,000']] }
     ],
     directadmin: [
-      { name: 'DA Starter', desc: 'Perfect for testing the waters with your first hosting brand.', monthly: 2.04,
+      { name: 'DA Starter', desc: 'Perfect for testing the waters with your first hosting brand.', yearly: 2.04,
         url: 'https://my.bisup.com/store/directadmin-reseller/directadmin-reseller-starter',
         features: ['50 DirectAdmin Accounts', '100 GB NVMe SSD', 'Unlimited Bandwidth'],
         resources: [['RAM', '4 GB'], ['vCPU', '2 Cores'], ['I/O', '1 GB/s'], ['Backups', 'Weekly']] },
-      { name: 'DA Professional', desc: 'Most resellers start here — room to grow from day one.', monthly: 11.31,
+      { name: 'DA Professional', desc: 'Most resellers start here — room to grow from day one.', yearly: 11.31,
         url: 'https://my.bisup.com/store/directadmin-reseller/directadmin-reseller-professional',
         features: ['100 DirectAdmin Accounts', '500 GB NVMe SSD', 'Unlimited Bandwidth'],
         resources: [['RAM', '4 GB'], ['vCPU', '2 Cores'], ['I/O', '2 GB/s'], ['Backups', 'Daily']] },
-      { name: 'DA Ultimate', desc: 'For established resellers managing a growing client base.', monthly: 26.66,
+      { name: 'DA Ultimate', desc: 'For established resellers managing a growing client base.', yearly: 26.66,
         url: 'https://my.bisup.com/store/directadmin-reseller/directadmin-reseller-ultimate',
         features: ['200 DirectAdmin Accounts', '500 GB NVMe SSD', 'Unlimited Bandwidth'],
         resources: [['RAM', '4 GB'], ['vCPU', '2 Cores'], ['I/O', '2 GB/s'], ['Backups', 'Daily']] },
-      { name: 'DA TOP', desc: 'Maximum headroom for high-volume hosting businesses.', monthly: 44.44,
+      { name: 'DA TOP', desc: 'Maximum headroom for high-volume hosting businesses.', yearly: 44.44,
         url: 'https://my.bisup.com/store/directadmin-reseller/directadmin-reseller-top',
-        features: ['Unlimited DirectAdmin Accounts', '100 GB SSD Storage', 'Unlimited Bandwidth'],
+        features: ['Unlimited DirectAdmin Accounts', '1000 GB NVMe SSD', 'Unlimited Bandwidth'],
         resources: [['RAM', '4 GB'], ['vCPU', '2 Cores'], ['CDN', 'Free'], ['DDoS Protection', 'Included']] }
     ]
   };
@@ -145,7 +151,9 @@
   var billingLabels = doc.querySelectorAll('[data-billing-label]');
   var pricingGrid = doc.getElementById('pricingGrid');
   var productButtons = doc.querySelectorAll('.product-switch-btn');
-  var YEARLY_DISCOUNT = 0.2;
+  // Paying month-to-month costs 20% more than the 12-month term rate (plan.yearly).
+  var MONTHLY_MARKUP = 0.2;
+  var YEARLY_SAVINGS_PCT = Math.round((1 - 1 / (1 + MONTHLY_MARKUP)) * 100);
 
   function formatCurrency(n) {
     return n.toFixed(2);
@@ -164,13 +172,14 @@
         card.querySelector('.price-name').textContent = plan.name;
         card.querySelector('.price-desc').textContent = plan.desc;
         var numberEl = card.querySelector('.price-number');
-        numberEl.setAttribute('data-monthly', plan.monthly);
-        var value = isYearly ? plan.monthly * (1 - YEARLY_DISCOUNT) : plan.monthly;
+        var monthlyValue = plan.yearly * (1 + MONTHLY_MARKUP);
+        numberEl.setAttribute('data-monthly', formatCurrency(monthlyValue));
+        var value = isYearly ? plan.yearly : monthlyValue;
         numberEl.textContent = formatCurrency(value);
         var noteEl = card.querySelector('[data-note]');
         if (noteEl) {
           noteEl.textContent = isYearly
-            ? 'Billed yearly · save ' + Math.round(YEARLY_DISCOUNT * 100) + '%'
+            ? 'Billed yearly · save ' + YEARLY_SAVINGS_PCT + '%'
             : 'Billed monthly';
         }
         card.querySelector('.price-features').innerHTML = plan.features.map(function (f) {
